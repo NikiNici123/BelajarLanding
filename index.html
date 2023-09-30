@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>NikiNici</title>
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="Landing.css" />
+    <link rel="stylesheet" href="dist/output.css" />
+    <link rel="icon" href="" />
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    
+  </head>
+  <body class="bg-slate-100 flex flex-col gap-60 max-w-6xl mx-auto">
+    <header class="Header">
+      <nav class="HeaderNav"> 
+        <ul class="flex flex-row justify-around py-7 bg-red-100 text-2xl italic font-bold  drop-shadow-lg">
+          <li class="Home">
+            <a href="#" class="textHeader" target="#">NikiNici</a>
+          </li>
+          <li class="flex gap-14" id="Header">
+          </li>
+        </ul>
+      </nav>
+    </header>
+  <main class="ContactMe">
+    <div class="flex flex-row justify-around h-80">
+      <section class=" w-80 h-80 flex flex-col justify-between items-center">
+        <h1 class="text-lg text">Images of me</h1>
+        <img  class="Images" src="DirImage/Cosplay1.jpg" alt="Cosplay1"></img>
+        <img class="Images" src="DirImage/Cosplay2.JPG" alt="Cosplay2"></img>
+        <img class="Images" src="DirImage/Cosplay3.JPG" alt="Cosplay3"></img>
+        <img class="Images" src="DirImage/Cosplay4.JPG" alt="Cosplay4"></img>
+        <button id="btnAbout" class="bg-slate-100 text-black h-10 w-40 rounded-md hover:bg-slate-400 hover:text-lg transition-all ease-in-out duration-300" >Next of Me</button>
+      </section> 
+      <section class="h-96 w-72 flex flex-row justify-between place-content-center">
+        <div class="flex flex-col justify-around text-center" >
+          <section class="flex flex-col justify-center hover:bg-slate-400 hover:text-lg hover:rounded-lg transition-all duration-300">
+            <h1 class="self-center text-xl">About me</h1>
+            <p class="text-center">
+              Young female programmer, with much passion also single yet taken 
+            </p>
+          </section>
+          <section class="flex flex-col justify-center hover:bg-slate-400 hover:text-lg hover:rounded-lg transition-all duration-300">
+            <h1 class="self-center text-xl">contact Me</h1>
+            <h1 class="text-center">xxxxxx</h1>
+          </section>
+        </div>
+      </section> 
+    </div>
+  </main>
+  <section class="Projects">
+    <div class="flex flex-col place-items-center gap-8">
+      <div>
+        <h1 class="text-5xl font-bold tracking-wide text-slate-400">Projects Head</h1>
+      </div>
+      <div class="flex flex-row flex-wrap gap-x-10 gap-y-10">
+        <div class="flex flex-col grow items-center place-content-center h-72 w-72 hover:bg-slate-400 rounded-xl transition-all duration-300" id="contents">
+          <img src="DirImage/Project 1.png" alt="Content 1" class="images">
+          <h1 class="textProject">project 1</h1>
+        </div>
+        <div class="flex flex-col grow items-center place-content-center h-72 w-72 hover:bg-slate-400 transition-all duration-300" id="contents">
+          <img src="DirImage/Project 2.png" alt="Content 2" class="images">
+          <h1 class="textProject"> project 2</h1>
+        </div>
+        <div class="flex flex-col grow items-center place-content-center h-72 w-72 hover:bg-slate-400 transition-all duration-300" id="contents">
+          <img src="DirImage/Project 3.png" alt="Content 3" class="images">
+          <h1 class="textProject">project 3</h1>
+        </div>
+        <div class="flex flex-col grow items-center place-content-center h-72 w-72 hover:bg-slate-400 transition-all duration-300" id="contents">
+          <img src="DirImage/Project 4.png" alt="Content 4" class="images">
+          <h1 class="textProject">project 4</h1>
+         </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="Landing.js"></script>
+  
+  <section class="Gmaps">
+    <div class="flex flex-col place-items-center backdrop-blur-sm bg-white/30">
+      <h1 class="">Location Random</h1>
+      <img src="" alt="LocImg" href="">asdasd</img>
+    </div>
+  </section>
+  </body>
+  
+</html>

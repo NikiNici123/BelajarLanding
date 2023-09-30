@@ -1,0 +1,50 @@
+.textHeader {
+    color: #f87171;
+    transition: 0.6s;
+}
+
+.textHeader:hover {
+    font-size: 26px;
+    letter-spacing: 0.05em;
+    color: red;
+    transition: 0.3s;
+    background-color: #94a3b8;
+    border: ivory;
+    border-radius: 15px;
+    padding: #3a424c;
+}
+
+.merah:hover{
+    color: blue;
+}
+
+.ListProject {
+    place-self: center;
+    display: none
+}
+
+
+.textHeader::after {
+    content: '>';
+    color: red;
+    size: 50%;
+    opacity: 0%;
+    transition: 1s
+}
+
+
+.textHeader:hover::after {
+    opacity: 100%;
+    color: #fee2e2;
+    
+}
+
+.images {
+    height: 240px;
+    width: 240px;
+}
+
+.textProject {
+    font-size: 24px;
+    font-weight: bold; 
+}
