@@ -17,7 +17,7 @@ const menu = {
          "text" : "Pap"
         }]
 }
-
+let newTry = "asdasd"
 const coba = (element) => {
     if (element.target.style.background == "") {
         element.target.style.background = "red"
