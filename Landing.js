@@ -1,22 +1,35 @@
 const menu = { 
+    "type": "module",
     "Header" : [
         {
-        "id" : "project",
+        "id" : "Project",
         "text" : "Project"
         }, 
         {
-         "id" : "hubungi",
-         "text": "hubungi"
+            "id" : "Hubungi",
+            "text": "hubungi"
         },
         {
-         "id" : "Lokasi",
-         "text" : "Lokasi"
+            "id" : "Lokasi",
+            "text" : "Lokasi"
         }, 
         {
-         "id" : "Pap",
-         "text" : "Pap"
-        }]
+            "id" : "Pap",
+            "text" : "Pap"
+        }],
+    "Content2" : [
+        {
+        "id" : "AboutMe",
+        "text" : "About Me"
+        },
+        {
+        "id" : "AboutMeText",
+        "text" : "Young female programmer, with much passion also single yet taken "
+        }
+    ]
 }
+
+
 let newTry = "asdasd"
 const coba = (element) => {
     if (element.target.style.background == "") {
@@ -161,6 +174,20 @@ let scrollInto = (ButtonID, TargetClass) => {
     let targetDiv = document.querySelector(`.${TargetClass}`)
     ButtonProject.addEventListener('click', () => targetDiv.scrollIntoView())
 }
+
+let createElementContent2 = () => {
+    let Content2 = document.querySelector('#Content2')
+    let createDiv = document.createElement('h1')
+
+
+}
+
+createElementContent2()
+
+
+
+
+
 
 scrollInto('Project', 'Projects');
 scrollInto('Hubungi', 'ContactMe');

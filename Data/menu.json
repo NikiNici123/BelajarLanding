@@ -1,6 +1,30 @@
-{
-    "headerProject" : "Project",
-    "headerHubungi" : "Hubungi",
-    "headerLokasi" : "Lokasi",
-    "headerPap" : "Pap"
+{ 
+    "type": "module",
+    "Header" : [
+        {
+        "id" : "Project",
+        "text" : "Project"
+        }, 
+        {
+            "id" : "Hubungi",
+            "text": "hubungi"
+        },
+        {
+            "id" : "Lokasi",
+            "text" : "Lokasi"
+        }, 
+        {
+            "id" : "Pap",
+            "text" : "Pap"
+        }],
+    "Content2" : [
+        {
+        "id" : "AboutMe",
+        "text" : "About Me"
+        },
+        {
+        "id" : "AboutMeText",
+        "text" : "Young female programmer, with much passion also single yet taken "
+        }
+    ]
 }
