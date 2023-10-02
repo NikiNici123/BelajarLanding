@@ -97,7 +97,7 @@ let createElementContent2 = () => {
 
 const SOURCE_TRAINING_LANDING = "https://booking.kai.id/api/stations2"
 
-async function FetchCertainData(key,index) {
+async function FetchCertainData(key = "") {
     const response = await fetch(SOURCE_TRAINING_LANDING);
     const get = await response.json();
     return get[key].code;
@@ -110,7 +110,7 @@ async function CreateTrainDiv() {
     for (let index = 0; index < totalKereta; index++ ) {
         const createDiv = document.createElement('div');
         createDiv.id = `${index}`
-        createDiv.classList.add("flex", "flex-col", "flex-wrap", "gap-10")
+        createDiv.setAttribute('class', 'flex flex-col flex-warp gap-10')
         
         for (let j = 0; j <= 1; j++) {
             const createH1 = document.createElement('h1');
@@ -126,7 +126,6 @@ async function CreateTrainDiv() {
 Header()
 ImageofMeChanges();
 CreateTrainDiv()
-FetchCertainData()
 createElementContent2()
 scrollInto('Project', 'Projects');
 scrollInto('Hubungi', 'ContactMe');
