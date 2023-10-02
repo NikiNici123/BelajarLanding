@@ -29,9 +29,6 @@ const menu = {
     ]
 }
 
-
-let newTry = "asdasd"
-
 let ImageofMeChanges = () => {
     let PositionImOfMe = 0
     let AboutText = document.querySelectorAll('.Images') 
@@ -70,22 +67,19 @@ let ImageofMeChanges = () => {
 let buttonsDo = () => {
 
 }
-// AboutMeChanges();
-ImageofMeChanges();
-// ProjectOfMeChanges();
 
-let section = document.querySelectorAll('section')
-
-
-
-for(let i = 0; i<menu.Header.length;i++) {
-    let elemen = document.createElement('p')
-    let IDParent = document.querySelector('#Header')
-    elemen.textContent = menu.Header[i].text
-    elemen.setAttribute('class', 'textHeader')
-    elemen.setAttribute('id', menu.Header[i].id)
-    IDParent.appendChild(elemen)
+const Header = () => {
+    for(let i = 0; i<menu.Header.length;i++) {
+        let elemen = document.createElement('p')
+        let IDParent = document.querySelector('#Header')
+        elemen.textContent = menu.Header[i].text
+        elemen.setAttribute('class', 'textHeader')
+        elemen.setAttribute('id', menu.Header[i].id)
+        IDParent.appendChild(elemen)
+    }
 }
+
+
 
 let scrollInto = (ButtonID, TargetClass) => {
     let ButtonProject = document.querySelector(`#${ButtonID}`)
@@ -100,19 +94,43 @@ let createElementContent2 = () => {
 
 }
 
-createElementContent2()
-scrollInto('Project', 'Projects');
-scrollInto('Hubungi', 'ContactMe');
-scrollInto('Lokasi', 'Gmaps');
 
-const source = " https://api-blue-archive.vercel.app/api/characters"
+const SOURCE_TRAINING_LANDING = "https://booking.kai.id/api/stations2"
 
-async function newFunction(sumberAPI) {
-    const response = await fetch(sumberAPI);
-    const {data} = await response.json();
-    return data[0];
+async function FetchCertainData(key,index) {
+    const response = await fetch(SOURCE_TRAINING_LANDING);
+    const get = await response.json();
+    return get[key].code;
+}
+
+async function CreateTrainDiv() {
+    const trainChild = document.querySelector('#trainChild');
+    let endpoint = 0;
+    const totalKereta = 10;
+    for (let index = 0; index < totalKereta; index++ ) {
+        const createDiv = document.createElement('div');
+        createDiv.id = `${index}`
+        createDiv.classList.add("flex", "flex-col", "flex-wrap", "gap-10")
+        
+        for (let j = 0; j <= 1; j++) {
+            const createH1 = document.createElement('h1');
+            createH1.textContent = await FetchCertainData(endpoint) ;
+            createDiv.appendChild(createH1);
+            endpoint++;
+        }
+        trainChild.appendChild(createDiv)
+    }
 }
 
 
+Header()
+ImageofMeChanges();
+CreateTrainDiv()
+FetchCertainData()
+createElementContent2()
+scrollInto('Project', 'Projects');
+scrollInto('Hubungi', 'ContactMe');
+scrollInto('Lokasi', 'Train');
 
-console.log(newFunction(source))
+
+
