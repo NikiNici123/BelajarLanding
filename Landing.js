@@ -3,19 +3,23 @@ const menu = {
     "Header" : [
         {
         "id" : "Project",
-        "text" : "Project"
+        "text" : "Project",
+        "class" : "fi fi-rr-edit"
         }, 
         {
-            "id" : "Hubungi",
-            "text": "hubungi"
+        "id" : "Hubungi",
+        "text": "hubungi",
+        "class" : "fi fi-br-phone-call"
         },
         {
             "id" : "Lokasi",
-            "text" : "Lokasi"
+            "text" : "Lokasi",
+            "class" : "fi fi-rr-marker"
         }, 
         {
             "id" : "Pap",
-            "text" : "Pap"
+            "text" : "Pap",
+            "class" : "fi fi-rr-shopping-cart"
         }],
     "Content2" : [
         {
@@ -28,6 +32,8 @@ const menu = {
         }
     ]
 }
+
+let Key = 'kNtIMeMmkB7gWT0oQC6EzdJAeCTzbI49JFGRsi2cXgG6rGAj'
 
 let ImageofMeChanges = () => {
     let PositionImOfMe = 0
@@ -70,16 +76,26 @@ let buttonsDo = () => {
 
 const Header = () => {
     for(let i = 0; i<menu.Header.length;i++) {
-        let elemen = document.createElement('p')
         let IDParent = document.querySelector('#Header')
-        elemen.textContent = menu.Header[i].text
-        elemen.setAttribute('class', 'textHeader')
+        let elemen = document.createElement('i')
+        elemen.setAttribute('class', menu.Header[i].class+ " border-slate-700 border-2 px-2 py-1 lg:px-5 lg:py-3 rounded-md hover:bg-slate-500 hover:border-white hover:text-red-300 hover:rounded-2xl transition-all duration-300 ease-in-out")
         elemen.setAttribute('id', menu.Header[i].id)
         IDParent.appendChild(elemen)
     }
 }
 
+const listInHeader = () => {
+    menu.Header.forEach((element, index) => {
+       let IDParent = document.querySelector("#"+element.id)
+       let elemen = document.createElement('') 
+    });
 
+}
+
+// const HeaderChild = () => {
+//     let IDParent = document.querySelector('#Project')
+//     for
+// }
 
 let scrollInto = (ButtonID, TargetClass) => {
     let ButtonProject = document.querySelector(`#${ButtonID}`)
@@ -95,37 +111,17 @@ let createElementContent2 = () => {
 }
 
 
-const SOURCE_TRAINING_LANDING = "https://booking.kai.id/api/stations2"
+const SOURCE_TRAINING_LANDING = "api.cms.zver.my.id"
 
 async function FetchCertainData(key = "") {
     const response = await fetch(SOURCE_TRAINING_LANDING);
     const get = await response.json();
-    return get[key].code;
+    return log(get);
 }
-
-async function CreateTrainDiv() {
-    const trainChild = document.querySelector('#trainChild');
-    let endpoint = 0;
-    const totalKereta = 10;
-    for (let index = 0; index < totalKereta; index++ ) {
-        const createDiv = document.createElement('div');
-        createDiv.id = `${index}`
-        createDiv.setAttribute('class', 'flex flex-col flex-warp gap-10')
-        
-        for (let j = 0; j <= 1; j++) {
-            const createH1 = document.createElement('h1');
-            createH1.textContent = await FetchCertainData(endpoint) ;
-            createDiv.appendChild(createH1);
-            endpoint++;
-        }
-        trainChild.appendChild(createDiv)
-    }
-}
-
 
 Header()
 ImageofMeChanges();
-CreateTrainDiv()
+// FetchCertainData()
 createElementContent2()
 scrollInto('Project', 'Projects');
 scrollInto('Hubungi', 'ContactMe');

@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="Landing.css" />
     <link rel="stylesheet" href="dist/output.css" />
     <link rel="icon" href="" />
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <style type="text/tailwindcss">
       @layer utilities {
         .content-auto {
@@ -19,12 +22,14 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     
   </head>
-  <body class="bg-slate-100 flex flex-col gap-y-40 lg:gap-60 lg:max-w-6xl lg:mx-auto">
+
+  <body class="bg-slate-100 round flex flex-col gap-y-40 lg:gap-60 lg:max-w-6xl lg:mx-auto">
+    <div class="bg-red-100 absolute lg:py-7 items-center justify-around flex flex-row top-0 h-32 w-9/12 shadow-lg"></div>
     <header class="Header">
       <nav class="HeaderNav"> 
-        <ul class="flex flex-row justify-around lg:py-7 py-4 bg-red-100 lg:text-2xl text-lg italic font-bold drop-shadow-lg">
+        <ul class="flex flex-row justify-around items-center lg:py-7 py-4 lg:text-2xl text-lg italic font-bold drop-shadow-lg">
           <li class="Home">
-            <a href="#" class="textHeader" target="#">NikiNici</a>
+            <a href="#" class="border-slate-700 border-2 p-3 hover:rounded-2xl hover:bg-slate-700 hover:border-white hover:text-red-300 transition-all duration-300 ease-in-out" id="textHeader" target="#">NikiNici</a>
           </li>
           <li class="flex gap-14" id="Header">
           </li>
@@ -32,14 +37,13 @@
       </nav>
     </header>
   <main class="ContactMe">
-    <div class="flex flex-col place-items-center lg:flex lg:flex-row lg:justify-between gap-y-10 h-80 ">
+    <div class="flex flex-col place-items-center lg:flex lg:flex-row lg:justify-around gap-y-10 h-80 ">
       <section class=" lg:w-80 lg:h-80 w-80 h-60 flex flex-col lg:justify-between lg:items-center" >
-        <h1 class="text-lg text-center">Images of me</h1>
+        <h1 class="text-xl text-center">Curious of who i am?</h1>
         <img  class="Images" src="DirImage/Cosplay1.jpg" alt="Cosplay1"></img>
-        <img class="Images" src="DirImage/Cosplay2.PNG" alt="Cosplay2"></img>
         <img class="Images" src="DirImage/Cosplay3.JPG" alt="Cosplay3"></img>
         <img class="Images" src="DirImage/Cosplay4.JPG" alt="Cosplay4"></img>
-        <button id="btnAbout" class="bg-slate-100 text-black h-10 w-40 rounded-md self-center  hover:bg-slate-400 hover:text-lg transition-all ease-in-out duration-300" >Next of Me</button>
+        <button id="btnAbout" class="bg-slate-100 text-black h-10 w-40 rounded-md self-center  hover:bg-slate-400 hover:text-lg transition-all ease-in-out duration-300" >Next picture</button>
       </section>
       <section class="h-96 w-72 flex flex-row justify-between place-content-center" id="Content2">
         <div class="flex flex-col lg:justify-around place-content-center text-center gap-y-10" >
