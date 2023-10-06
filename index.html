@@ -12,6 +12,7 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <style type="text/tailwindcss">
       @layer utilities {
         .content-auto {
@@ -23,26 +24,28 @@
     
   </head>
 
-  <body class="bg-slate-100 round flex flex-col gap-y-40 lg:gap-60 lg:max-w-6xl lg:mx-auto">
-    <div class="bg-red-100 absolute lg:py-7 items-center justify-around flex flex-row top-0 h-32 w-9/12 shadow-lg"></div>
+  <body class="bg-slate-100 flex flex-col gap-y-40 lg:gap-60 lg:max-w-6xl lg:mx-auto">
+    <div class="bg-red-100 w-full absolute flex flex-row left-0 top-0 h-28 py-7 shadow-xl"></div>
     <header class="Header">
-      <nav class="HeaderNav"> 
-        <ul class="flex flex-row justify-around items-center lg:py-7 py-4 lg:text-2xl text-lg italic font-bold drop-shadow-lg">
+      <nav class="HeaderNav "> 
+        <ul class="flex flex-row justify-around py-4 lg:flex-row lg:py-0 lg:text-2xl lg:mt-6 lg:content-center italic font-bold drop-shadow-lg">
           <li class="Home">
-            <a href="#" class="border-slate-700 border-2 p-3 hover:rounded-2xl hover:bg-slate-700 hover:border-white hover:text-red-300 transition-all duration-300 ease-in-out" id="textHeader" target="#">NikiNici</a>
+            <a href="#" class="border-slate-700 flex text-lg border-2 p-1 lg:text-4xl hover:rounded-2xl hover:bg-slate-700 hover:border-white hover:text-red-300 transition-all duration-300 ease-in-out" id="textHeader" target="#">NikiNici</a>
           </li>
-          <li class="flex gap-14" id="Header">
+          <li class="flex flex-col lg:flex-row lg:gap-x-14 lg:mt" id="Header">
           </li>
+          <i class="fi fi-br-menu-burger border-slate-700 flex text-4xl border-2 items-center p-1 lg:hidden hover:rounded-2xl hover:bg-slate-700 hover:border-white hover:text-red-300 transition-all duration-300 ease-in-out"></i>
+        </li>
         </ul>
       </nav>
     </header>
   <main class="ContactMe">
     <div class="flex flex-col place-items-center lg:flex lg:flex-row lg:justify-around gap-y-10 h-80 ">
       <section class=" lg:w-80 lg:h-80 w-80 h-60 flex flex-col lg:justify-between lg:items-center" >
-        <h1 class="text-xl text-center">Curious of who i am?</h1>
-        <img  class="Images" src="DirImage/Cosplay1.jpg" alt="Cosplay1"></img>
-        <img class="Images" src="DirImage/Cosplay3.JPG" alt="Cosplay3"></img>
-        <img class="Images" src="DirImage/Cosplay4.JPG" alt="Cosplay4"></img>
+        <h1 class="text-xl text-center">Curious of who i am? test 1</h1>
+        <img  class="Images min-h-80 h-80 max-h-80 object object-cover" src="DirImage/Cosplay1.jpg" alt="Cosplay1"></img>
+        <img class="Images min-h-80 h-80 max-h-80 object object-cover" src="DirImage/Cosplay3.JPG" alt="Cosplay3"></img>
+        <img class="Images min-h-80 h-80 max-h-80 object object-cover" src="DirImage/Cosplay4.JPG" alt="Cosplay4"></img>
         <button id="btnAbout" class="bg-slate-100 text-black h-10 w-40 rounded-md self-center  hover:bg-slate-400 hover:text-lg transition-all ease-in-out duration-300" >Next picture</button>
       </section>
       <section class="h-96 w-72 flex flex-row justify-between place-content-center" id="Content2">
