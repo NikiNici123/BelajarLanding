@@ -33,7 +33,6 @@ const menu = {
     ]
 }
 
-let Key = 'kNtIMeMmkB7gWT0oQC6EzdJAeCTzbI49JFGRsi2cXgG6rGAj'
 
 let ImageofMeChanges = () => {
     let PositionImOfMe = 0
@@ -114,14 +113,44 @@ let createElementContent2 = () => {
 }
 
 
-const SOURCE_TRAINING_LANDING = "api.cms.zver.my.id"
 
-async function FetchCertainData(key = "") {
-    const response = await fetch(SOURCE_TRAINING_LANDING);
-    const get = await response.json();
-    return log(get);
+let AUTHKEY = ""
+let AUTHREFRESH = ""
+let endpoint = ""
+const Link = "https://api.cms.zver.my.id/v1/"
+
+
+async function Fetch_data(Fetch_Action) {
+    const Response = await fetch(`${Link}privilege`, Fetch_Action)
+    const Response_JSON = await Response.json();
+    if (Response_JSON.status === 200) {
+        console.log("input sucess");
+        console.log(Response_JSON);
+    } else {
+        console.log("data failed");
+    }
 }
 
+const Post_data= (Name = "", url_Link = "") => {
+    const Get = {
+        method: "POST",
+        headers: {"Content-Type" : "application/json"},
+        body: JSON.stringify({
+            "name" : `${Name}`,
+            "url" : `/${url_Link}`
+        })
+    }
+    return Get
+}
+
+let button1 = document.querySelector('#submitForm')
+let data1 = document.querySelector('#inputForm')
+
+button1.addEventListener('click', () => console.log(data1.value))
+
+
+
+Fetch_data(Post_data("niki", "niki"))
 Header()
 ImageofMeChanges();
 // FetchCertainData()
