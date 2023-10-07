@@ -117,13 +117,25 @@ let createElementContent2 = () => {
 let AUTHKEY = ""
 let AUTHREFRESH = ""
 let endpoint = ""
+
 const Link = "https://api.cms.zver.my.id/v1/"
 
+async function Show_data() {
+    const Response = await fetch(`${Link}privilege`)
+    const Response_JSON = await Response.json();
+    if (Response_JSON.status === 200) {
+        console.log("Read Sucess");
+        console.log(Response_JSON);
+    } else {
+        console.log("Read failed");
+    }
+}
 
 async function Fetch_data(Fetch_Action) {
     const Response = await fetch(`${Link}privilege`, Fetch_Action)
     const Response_JSON = await Response.json();
-    if (Response_JSON.status === 200) {
+    console.log(Response_JSON);
+    if (Response_JSON.status === 201) {
         console.log("input sucess");
         console.log(Response_JSON);
     } else {
@@ -134,7 +146,9 @@ async function Fetch_data(Fetch_Action) {
 const Post_data= (Name = "", url_Link = "") => {
     const Get = {
         method: "POST",
-        headers: {"Content-Type" : "application/json"},
+        headers: {
+            "Content-Type" : "application/json"
+        },
         body: JSON.stringify({
             "name" : `${Name}`,
             "url" : `/${url_Link}`
@@ -143,14 +157,21 @@ const Post_data= (Name = "", url_Link = "") => {
     return Get
 }
 
-let button1 = document.querySelector('#submitForm')
-let data1 = document.querySelector('#inputForm')
+const Form_Submit = ()=> {
+    let get_button1 = document.querySelector('#submitForm')
+    let get_data = document.querySelector('#inputName')
+    let get_Url = document.querySelector('#inputName')
+    get_button1.addEventListener('click', (e) => {
+        e.preventDefault()
+        URL_input = get_Url.value;
+        Name_input = get_data.value;
+        Fetch_data(Post_data(URL_input, Name_input))
+        Show_data()
+    })
+}
 
-button1.addEventListener('click', () => console.log(data1.value))
-
-
-
-Fetch_data(Post_data("niki", "niki"))
+Show_data()
+Form_Submit()
 Header()
 ImageofMeChanges();
 // FetchCertainData()
