@@ -158,20 +158,21 @@ const Post_data= (Name = "", url_Link = "") => {
 }
 
 const Form_Submit = ()=> {
-    let get_button1 = document.querySelector('#submitForm')
+    let get_form = document.querySelector('#form')
     let get_data = document.querySelector('#inputName')
     let get_Url = document.querySelector('#inputName')
-    get_button1.addEventListener('click', (e) => {
-        e.preventDefault()
+    get_form.addEventListener('submit', (e) => {
+        e.preventDefault();
         URL_input = get_Url.value;
         Name_input = get_data.value;
-        Fetch_data(Post_data(URL_input, Name_input))
+        Fetch_data(Post_data(Name_input, URL_input))
         Show_data()
+        setTimeout(() => window.location.reload(), 500)
     })
 }
 
-Show_data()
 Form_Submit()
+Show_data()
 Header()
 ImageofMeChanges();
 // FetchCertainData()
