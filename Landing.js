@@ -33,6 +33,7 @@ const menu = {
     ]
 }
 
+const Link = "https://api.cms.zver.my.id/v1/"
 
 let ImageofMeChanges = () => {
     let PositionImOfMe = 0
@@ -73,7 +74,7 @@ let buttonsDo = () => {
 
 }
 
-const Header = () => {
+const Create_Header = () => {
     for(let i = 0; i<menu.Header.length;i++) {
         let IDParent = document.querySelector('#Header')
         let divParent = document.createElement('div')
@@ -105,29 +106,54 @@ let scrollInto = (ButtonID, TargetClass) => {
     ButtonProject.addEventListener('click', () => targetDiv.scrollIntoView())
 }
 
-let createElementContent2 = () => {
-    let Content2 = document.querySelector('#Content2')
-    let createDiv = document.createElement('h1')
-
-
+const scroll_Function = () => {
+    scrollInto('Project', 'Projects');
+    scrollInto('Hubungi', 'ContactMe');
+    scrollInto('Lokasi', 'Train');
 }
 
-
-
-let AUTHKEY = ""
-let AUTHREFRESH = ""
-let endpoint = ""
-
-const Link = "https://api.cms.zver.my.id/v1/"
-
-async function Show_data() {
+Console_Show_Data = async () => {
     const Response = await fetch(`${Link}privilege`)
     const Response_JSON = await Response.json();
     if (Response_JSON.status === 200) {
         console.log("Read Sucess");
-        console.log(Response_JSON);
+        console.log(Response_JSON.data);
     } else {
         console.log("Read failed");
+    }
+}
+
+Show_Screen_data = async () => {
+    const get_Data = await fetch(`${Link}privilege`);
+    const response = await get_Data.json()
+
+    let createParentNode = (index) => {
+        let ParentNode = document.createElement('div');
+        ParentNode.id = `Data${index}`
+        ParentNode.setAttribute('class', 'flex flex-col items-center')
+        return ParentNode
+    }
+
+    let createChildNode_P = (index) => {
+        let elemenID = document.createElement('p');
+        elemenID.textContent = response.data[index].id
+        return elemenID
+    }
+
+    let createChildNode_span = index => {
+        let elemenName = document.createElement('span')
+        elemenName.textContent = response.data[index].name
+        return elemenName
+    }
+
+    for (let i = 0; i < response.data.length; i++) {
+        let Grand_ParentNode = document.getElementById('listSomething')
+        let ParentNode = createParentNode(i)        
+        let childNode_P = createChildNode_P(i)
+        let childNode_span = createChildNode_span(i)
+        Grand_ParentNode.appendChild(ParentNode)
+        ParentNode.appendChild(childNode_P)
+        ParentNode.appendChild(childNode_span)
     }
 }
 
@@ -144,7 +170,7 @@ async function Fetch_data(Fetch_Action) {
 }
 
 const Post_data= (Name = "", url_Link = "") => {
-    const Get = {
+    const POST = {
         method: "POST",
         headers: {
             "Content-Type" : "application/json"
@@ -154,32 +180,43 @@ const Post_data= (Name = "", url_Link = "") => {
             "url" : `/${url_Link}`
         })
     }
-    return Get
+    return POST
+}
+
+const Del_Data= (Name = "", url_Link = "") => {
+    const DEL = {
+        method: "DELETE",
+        headers: {
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify({
+            "name" : `${Name}`,
+            "url" : `/${url_Link}`
+        })
+    }
+    return DEL
 }
 
 const Form_Submit = ()=> {
     let get_form = document.querySelector('#form')
     let get_data = document.querySelector('#inputName')
-    let get_Url = document.querySelector('#inputName')
+    let get_Url = document.querySelector('#inputURL')
     get_form.addEventListener('submit', (e) => {
         e.preventDefault();
-        URL_input = get_Url.value;
-        Name_input = get_data.value;
-        Fetch_data(Post_data(Name_input, URL_input))
-        Show_data()
+        Fetch_data(Post_data(get_data.value, get_Url.value))
         setTimeout(() => window.location.reload(), 500)
     })
 }
 
-Form_Submit()
-Show_data()
-Header()
+
+Show_Screen_data()
+Create_Header()
 ImageofMeChanges();
-// FetchCertainData()
-createElementContent2()
-scrollInto('Project', 'Projects');
-scrollInto('Hubungi', 'ContactMe');
-scrollInto('Lokasi', 'Train');
+scroll_Function()
+Form_Submit()
+Console_Show_Data()
+
+
 
 
 
