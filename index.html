@@ -8,7 +8,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="Landing.css" />
     <link rel="stylesheet" href="dist/output.css" />
-    <link rel="icon" href="" />
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
@@ -66,6 +65,7 @@
   </main>
   <section class="Projects">
     <div class="flex flex-col place-items-center gap-8">
+
       <div>
         <h1 class="text-5xl font-bold tracking-wide text-slate-400">Projects Head</h1>
       </div>
@@ -91,17 +91,25 @@
     </div>
   </section>
   <div id="Form_Section" class="flex flex-col gap-y-5">
+    <div id="header">
+      <h1 class="text-lg group text-red-300 transition-all duration-300">Submit your text here
+        <span class="block max-w-0 group-hover:max-w-sm transition-all duration-500 h-0.5 bg-red-600"></span>
+      </h1>
+      
+    </div>
     <form id="form">
       <input type="text" placeholder="Isi Nama" id="inputName">
       <input type="text" placeholder="Isi URL" id="inputURL">
-      <button type="submit" value="Klik disini" id="submitForm">Submit Here</button>
+      <button type="submit" value="Klik disini" id="submitForm">POST HERE</button>
     </form>
     <div id="listSomething" class="flex flex-row flex-wrap justify-around gap-3">
-      
+
     </div>
 
   </div>
-  <script src="Landing.js"></script>
-  </body>
   
+  </body>
+  <script src="Header_Landing.js"></script>
+  <script src="Header_Form.js"></script>
+
 </html>

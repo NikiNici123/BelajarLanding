@@ -33,7 +33,6 @@ const menu = {
     ]
 }
 
-const Link = "https://api.cms.zver.my.id/v1/"
 
 let ImageofMeChanges = () => {
     let PositionImOfMe = 0
@@ -70,9 +69,7 @@ let ImageofMeChanges = () => {
     })
 }
 
-let buttonsDo = () => {
 
-}
 
 const Create_Header = () => {
     for(let i = 0; i<menu.Header.length;i++) {
@@ -112,109 +109,11 @@ const scroll_Function = () => {
     scrollInto('Lokasi', 'Train');
 }
 
-Console_Show_Data = async () => {
-    const Response = await fetch(`${Link}privilege`)
-    const Response_JSON = await Response.json();
-    if (Response_JSON.status === 200) {
-        console.log("Read Sucess");
-        console.log(Response_JSON.data);
-    } else {
-        console.log("Read failed");
-    }
-}
 
-Show_Screen_data = async () => {
-    const get_Data = await fetch(`${Link}privilege`);
-    const response = await get_Data.json()
-
-    let createParentNode = (index) => {
-        let ParentNode = document.createElement('div');
-        ParentNode.id = `Data${index}`
-        ParentNode.setAttribute('class', 'flex flex-col items-center')
-        return ParentNode
-    }
-
-    let createChildNode_P = (index) => {
-        let elemenID = document.createElement('p');
-        elemenID.textContent = response.data[index].id
-        return elemenID
-    }
-
-    let createChildNode_span = index => {
-        let elemenName = document.createElement('span')
-        elemenName.textContent = response.data[index].name
-        return elemenName
-    }
-
-    for (let i = 0; i < response.data.length; i++) {
-        let Grand_ParentNode = document.getElementById('listSomething')
-        let ParentNode = createParentNode(i)        
-        let childNode_P = createChildNode_P(i)
-        let childNode_span = createChildNode_span(i)
-        Grand_ParentNode.appendChild(ParentNode)
-        ParentNode.appendChild(childNode_P)
-        ParentNode.appendChild(childNode_span)
-    }
-}
-
-async function Fetch_data(Fetch_Action) {
-    const Response = await fetch(`${Link}privilege`, Fetch_Action)
-    const Response_JSON = await Response.json();
-    console.log(Response_JSON);
-    if (Response_JSON.status === 201) {
-        console.log("input sucess");
-        console.log(Response_JSON);
-    } else {
-        console.log("data failed");
-    }
-}
-
-const Post_data= (Name = "", url_Link = "") => {
-    const POST = {
-        method: "POST",
-        headers: {
-            "Content-Type" : "application/json"
-        },
-        body: JSON.stringify({
-            "name" : `${Name}`,
-            "url" : `/${url_Link}`
-        })
-    }
-    return POST
-}
-
-const Del_Data= (Name = "", url_Link = "") => {
-    const DEL = {
-        method: "DELETE",
-        headers: {
-            "Content-Type" : "application/json"
-        },
-        body: JSON.stringify({
-            "name" : `${Name}`,
-            "url" : `/${url_Link}`
-        })
-    }
-    return DEL
-}
-
-const Form_Submit = ()=> {
-    let get_form = document.querySelector('#form')
-    let get_data = document.querySelector('#inputName')
-    let get_Url = document.querySelector('#inputURL')
-    get_form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        Fetch_data(Post_data(get_data.value, get_Url.value))
-        setTimeout(() => window.location.reload(), 500)
-    })
-}
-
-
-Show_Screen_data()
 Create_Header()
 ImageofMeChanges();
 scroll_Function()
-Form_Submit()
-Console_Show_Data()
+
 
 
 
