@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="Landing.css" />
     <link rel="stylesheet" href="dist/output.css" />
+
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
@@ -20,6 +21,7 @@
       }
     </style>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="js/api/privilege.js"></script>
     
   </head>
 
@@ -97,19 +99,25 @@
       </h1>
       
     </div>
-    <form id="form">
+    <form id="form_Post">
       <input type="text" placeholder="Isi Nama" id="inputName">
       <input type="text" placeholder="Isi URL" id="inputURL">
       <button type="submit" value="Klik disini" id="submitForm">POST HERE</button>
     </form>
-    <div id="listSomething" class="flex flex-row flex-wrap justify-around gap-3">
+    <form id="form_Delete">
+      <h1>Klik checkbox yang ingin dihapus, kemudian klik DELETE HERE</h1>
+      <button type="submit" value="klik disini" id="deleteForm" class="bg-red-400">DELETE HERE</button>
+      <div id="listSomething" class="flex flex-row flex-wrap justify-around gap-3">
 
-    </div>
+      </div>
+    </form>
+
 
   </div>
-  
-  </body>
   <script src="Header_Landing.js"></script>
   <script src="Header_Form.js"></script>
+  <script src="js/form/privilege.delete.js" defer> </script>
+  </body>
+
 
 </html>
