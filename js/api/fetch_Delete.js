@@ -1,17 +1,17 @@
-let Data_Template = async (Name, url_Link) => {
+let Data_Delete = async (id, url_Link) => {
     const Response = await fetch(`${Link}privilege`, {
-        method: "POST",
+        method: "DELETE",
         headers: {
             "Content-Type" : "application/json"
         },
         body: JSON.stringify({
-            "name" : `${Name}`,
-            "url" : `/${url_Link}`
+            "id" : id,
+            "url" : `${url_Link}`
         })
     })
     const Response_JSON = await Response.json();
     console.log(Response_JSON);
-    if (Response_JSON.status === 201) {
+    if (Response_JSON.status === 200) {
         console.log("input sucess");
         console.log(Response_JSON);
     } else {

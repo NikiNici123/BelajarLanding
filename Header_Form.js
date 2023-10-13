@@ -1,8 +1,8 @@
 const Link = "https://api.cms.zver.my.id/v1/"
 let get_data = document.querySelector('#inputName')
 let get_Url = document.querySelector('#inputURL')
-let get_form = document.querySelector('#form_Post')
-let del_form = document.getElementById('form_Delete')
+let form_post = document.querySelector('#form_Post')
+let form_delete = document.querySelector('#form_Delete')
 
 let Console_Show_Data = async () => {
     const Response = await fetch(`${Link}privilege`)
@@ -15,7 +15,6 @@ let Console_Show_Data = async () => {
         console.log("Read failed"); 
     }
 }
-
 getPrivilege().then(response => {  
     let createParentNode = () => {
         let ParentNode = document.createElement('div');
@@ -26,7 +25,7 @@ getPrivilege().then(response => {
 
     let createChildNode_ID = (index) => {
         let elemenID = document.createElement('p');
-        elemenID.textContent = index
+        elemenID.textContent = response.data[index].id
         elemenID.id = "data_Id"
         return elemenID
     }
@@ -82,8 +81,3 @@ const Del_Data= (ID = 0, url_Link = "") => {
     }
     return DEL
 }
-
-
-// bikin 1 function khusus ngeload formPost formDel formPut
-// Bikin CSS Class untuk show data, rapikan, bentuk supaya responsive speerti #Header.
-// Yea~ 
