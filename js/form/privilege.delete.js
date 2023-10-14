@@ -1,5 +1,3 @@
-
-
 form_delete.addEventListener("submit", (e) => {
   e.preventDefault()
   let CheckboxValue = document.querySelectorAll("input[type=checkbox]")

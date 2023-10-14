@@ -1,20 +1,11 @@
-const Link = "https://api.cms.zver.my.id/v1/"
+const API_LINK_VERO = "https://api.cms.zver.my.id/v1/"
 let get_data = document.querySelector('#inputName')
 let get_Url = document.querySelector('#inputURL')
 let form_post = document.querySelector('#form_Post')
 let form_delete = document.querySelector('#form_Delete')
 
-let Console_Show_Data = async () => {
-    const Response = await fetch(`${Link}privilege`)
-    const Response_JSON = await Response.json();
 
-    if (Response_JSON.status === 200) {
-        console.log("Read Sucess");
-        console.log(Response_JSON);
-    } else {
-        console.log("Read failed"); 
-    }
-}
+
 getPrivilege().then(response => {  
     let createParentNode = () => {
         let ParentNode = document.createElement('div');
@@ -67,17 +58,3 @@ getPrivilege().then(response => {
         ParentNode.appendChild(Childnode_URL)
     }
 })
-
-const Del_Data= (ID = 0, url_Link = "") => {
-    const DEL = {
-        method: "DELETE",
-        headers: {
-            "Content-Type" : "application/json; charset=utf-8"
-        },
-        body: JSON.stringify({
-            "id" : ID,
-            "url" : `/${url_Link}`
-        })
-    }
-    return DEL
-}

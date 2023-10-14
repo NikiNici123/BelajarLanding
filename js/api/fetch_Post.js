@@ -1,5 +1,5 @@
 let Data_Post = async (Name, url_Link) => {
-    const Response = await fetch(`${Link}privilege`, {
+    const Response = await fetch(`${API_LINK_VERO}privilege`, {
         method: "POST",
         headers: {
             "Content-Type" : "application/json"

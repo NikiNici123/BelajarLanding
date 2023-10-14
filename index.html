@@ -29,13 +29,13 @@
     <div class="bg-red-100 w-full absolute flex flex-row left-0 top-0 h-28 py-7 shadow-xl"></div>
     <header class="Header">
       <nav class="HeaderNav "> 
-        <ul class="flex flex-row justify-around py-4 lg:flex-row lg:py-0 lg:text-2xl lg:mt-6 lg:content-center italic font-bold drop-shadow-lg">
+        <ul class=" relative flex flex-row justify-around items-center lg:flex-row lg:py-0 lg:text-2xl lg:items-start lg:mt-6 lg:content-center italic font-bold drop-shadow-lg">
           <li class="Home">
             <a href="#" class="border-slate-700 flex text-lg border-2 p-1 lg:text-4xl hover:rounded-2xl hover:bg-slate-700 hover:border-white hover:text-red-300 transition-all duration-300 ease-in-out" id="textHeader" target="#">NikiNici</a>
           </li>
           <li class="flex flex-col lg:flex-row lg:gap-x-14 lg:mt" id="Header">
           </li>
-          <i class="fi fi-br-menu-burger border-slate-700 flex text-4xl border-2 items-center p-1 lg:hidden hover:rounded-2xl hover:bg-slate-700 hover:border-white hover:text-red-300 transition-all duration-300 ease-in-out"></i>
+          <i class="fi fi-br-menu-burger border-slate-700 flex text-4xl border-2 lg:items-center p-1 lg:hidden hover:rounded-2xl hover:bg-slate-700 hover:border-white hover:text-red-300 transition-all duration-300 ease-in-out"></i>
         </li>
         </ul>
       </nav>
@@ -114,14 +114,23 @@
 
 
   </div>
-  <script src="js/api/fetch_Post.js" > </script>
+
+  <script src="js/api/fetch_Post.js" > </script>  
+
   <script src="js/api/fetch_Delete.js" > </script>
   <script src="js/api/privilege.js"></script>
-  <script src="Header_Form.js"></script>
-  <script src="Header_Landing.js"></script>
+
+  <script src="js/Header/fetchHeader.js"></script>
+  <script src="Form.js"></script>
+  <script src="Landing.js"></script>
+
+
   <script src="js/form/privilege.delete.js" defer> </script>
   <script src="js/form/privilege_post.js" defer> </script>
-
+  
+  <script src="js/Header/Create_childHeader.js" defer> </script>
+  <script src="js/Header/Create_Header.js" defer> </script>
+  <script src="js/Header/Scroll.js" ></script>
 
   </body>
 
