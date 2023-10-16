@@ -4,22 +4,22 @@
     {
     "id" : "Project",
     "text" : "Project",
-    "class" : "fi fi-rr-edit"
+    "icon" : "fi fi-rr-edit"
     }, 
     {
     "id" : "Hubungi",
     "text": "hubungi",
-    "class" : "fi fi-br-phone-call"
+    "icon" : "fi fi-br-phone-call"
     },
     {
-        "id" : "Lokasi",
-        "text" : "Lokasi",
-        "class" : "fi fi-rr-marker"
+    "id" : "Lokasi",
+    "text" : "Lokasi",
+    "icon" : "fi fi-rr-marker"
     }, 
     {
-        "id" : "Pap",
-        "text" : "Pap",
-        "class" : "fi fi-rr-shopping-cart"
+    "id" : "Random",
+    "text" : "Random",
+    "icon" : "fi fi-rr-shopping-cart"
     }],
 "Content2" : [
     {

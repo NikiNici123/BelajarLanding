@@ -25,49 +25,43 @@
         
   </head>
 
-  <body class="bg-slate-100 flex flex-col gap-y-40 lg:gap-60 lg:max-w-6xl lg:mx-auto">
-    <div class="bg-red-100 w-full absolute flex flex-row left-0 top-0 h-28 py-7 shadow-xl"></div>
+  <body class="bg-white flex flex-col gap-y-40 lg:gap-60 lg:max-w-6xl lg:mx-auto">
+    <div class="w-full absolute flex flex-row left-0 top-0 h-28 py-7"></div>
     <header class="Header">
       <nav class="HeaderNav "> 
-        <ul class=" relative flex flex-row justify-around items-center lg:flex-row lg:py-0 lg:text-2xl lg:items-start lg:mt-6 lg:content-center italic font-bold drop-shadow-lg">
-          <li class="Home">
-            <a href="#" class="border-slate-700 flex text-lg border-2 p-1 lg:text-4xl hover:rounded-2xl hover:bg-slate-700 hover:border-white hover:text-red-300 transition-all duration-300 ease-in-out" id="textHeader" target="#">NikiNici</a>
+        <ul class="flex flex-col lg:flex-row lg:justify-around lg:py-0 lg:text-2xl lg:items-start lg:mt-6 lg:content-center italic font-bold drop-shadow-lg">
+          <li class="flex flex-row justify-around" id="Home">
+            <a href="#" class="flex text-lg p-1 lg:text-4xl hover:border-white hover:text-red-300 transition-all duration-300 ease-in-out" id="textHeader" target="#">Niki
+              <span class="text-red-400 hover:text-white transition-all duration-500">nici</span>
+            </a>
+            <i class="fi fi-br-menu-burger border-slate-700 flex text-4xl border-2 lg:items-center p-1 lg:hidden hover:rounded-2xl hover:bg-slate-700 hover:border-white hover:text-red-300 transition-all duration-300 ease-in-out"></i>
           </li>
-          <li class="flex flex-col lg:flex-row lg:gap-x-14 lg:mt" id="Header">
+          <li class="flex flex-row lg:flex-row lg:gap-x-14 lg:mt" id="Header">
           </li>
-          <i class="fi fi-br-menu-burger border-slate-700 flex text-4xl border-2 lg:items-center p-1 lg:hidden hover:rounded-2xl hover:bg-slate-700 hover:border-white hover:text-red-300 transition-all duration-300 ease-in-out"></i>
-        </li>
+          
+         </li>
         </ul>
       </nav>
     </header>
   <main class="ContactMe">
-    <div class="flex flex-col place-items-center lg:flex lg:flex-row lg:justify-around gap-y-10 h-80 ">
-      <section class=" lg:w-80 lg:h-80 w-80 h-60 flex flex-col lg:justify-between lg:items-center" >
-        <h1 class="text-xl text-center">Curious of who i am? test 1</h1>
-        <img  class="Images min-h-80 h-80 max-h-80 object object-cover" src="DirImage/Cosplay1.jpg" alt="Cosplay1"></img>
-        <img class="Images min-h-80 h-80 max-h-80 object object-cover" src="DirImage/Cosplay3.JPG" alt="Cosplay3"></img>
-        <img class="Images min-h-80 h-80 max-h-80 object object-cover" src="DirImage/Cosplay4.JPG" alt="Cosplay4"></img>
-        <button id="btnAbout" class="bg-slate-100 text-black h-10 w-40 rounded-md self-center  hover:bg-slate-400 hover:text-lg transition-all ease-in-out duration-300" >Next picture</button>
+    <div class="flex justify-around place-content-center"> 
+      <section id="aboutMe" class="flex flex-col justify-start gap-y-5">
+        <h1 class="flex text-5xl tracking-wide text-gray-600 font-bold italic">GETTING TO KNOW ME</h1>
+        <h1 class="flex text-gray-500 italic w-96">young single female programmer with much talent and eagerness to learn more and more stuff along the</h1>
+        <form class="flex flex-row justify-end">
+          <input type="text" class="flex w-40">
+          <h2>send here</h2>
+        </form>
+        
+        
       </section>
-      <section class="h-96 w-72 flex flex-row justify-between place-content-center" id="Content2">
-        <div class="flex flex-col lg:justify-around place-content-center text-center gap-y-10" >
-          <section class="flex flex-col justify-center hover:bg-slate-400 hover:text-lg hover:rounded-lg transition-all duration-300">
-            <h1 class="self-start text-5xl line-clamp-1">About Me</h1>
-            <p class="text-left">
-              Young female programmer, with much passion also single yet taken 
-            </p>
-          </section>
-          <section class="flex flex-col justify-center hover:bg-slate-400 hover:text-lg hover:rounded-lg transition-all duration-300">
-            <h1 class="text-left text-xl">contact Me</h1>
-            <h1 class="text-left">xxxxxx</h1>
-          </section>
-        </div>
+      <section>
+        <h1>random picts</h1>
       </section>
     </div>
   </main>
   <section class="Projects">
     <div class="flex flex-col place-items-center gap-8">
-
       <div>
         <h1 class="text-5xl font-bold tracking-wide text-slate-400">Projects Head</h1>
       </div>
